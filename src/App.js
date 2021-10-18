@@ -7,6 +7,7 @@ import About from './Pages/About/About';
 import Appoinment from './Pages/Appoinment/Appoinment';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Login from './Pages/Login/Login';
+import Footer from './Pages/Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
         <PageNotFound></PageNotFound>
       </Route>
       </Switch>
+      <Footer></Footer>
       </BrowserRouter>
     </div>
   );

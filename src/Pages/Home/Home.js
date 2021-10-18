@@ -6,6 +6,7 @@ import carousel3 from './images/c(3).jpg';
 import carousel4 from './images/c(4).jpg';
 import carousel5 from './images/c(5).jpg';
 
+
 const Home = () => {
     return (
         <div>
@@ -56,12 +57,10 @@ const Home = () => {
             {/* services */}
 
             <section>
-                
+
             </section>
 
-            <footer>
-                
-            </footer>
+            
 
 
 
