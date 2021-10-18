@@ -3,6 +3,7 @@ import './Community.css'
 const Community = () => {
     return (
         <div className='container text-white community'>
+            
             <div className='community-part'>
                 <h1>200</h1>
                 <h3>Doctors</h3>
@@ -17,7 +18,7 @@ const Community = () => {
             </div>
             <div className='community-part'>
                 <h1>100</h1>
-                <h3>Honorable Award </h3>
+                <h3>Award </h3>
             </div>
         </div>
     );

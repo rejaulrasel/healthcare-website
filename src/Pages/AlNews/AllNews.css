@@ -1,0 +1,12 @@
+.allNews-section{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 40px;
+}
+@media only screen and (max-width:688px) {
+    .allNews-section{
+        display: grid;
+    grid-template-columns: repeat(1,1fr);
+    }
+}
