@@ -6,6 +6,7 @@ import Services from './Pages/Services/Services';
 import About from './Pages/About/About';
 import Appoinment from './Pages/Appoinment/Appoinment';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
+import Login from './Pages/Login/Login';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,9 @@ function App() {
       </Route>
       <Route path='/appointment'>
         <Appoinment></Appoinment>
+      </Route>
+      <Route path='/login'>
+        <Login></Login>
       </Route>
       <Route path='*'>
         <PageNotFound></PageNotFound>
