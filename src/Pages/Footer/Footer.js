@@ -57,17 +57,17 @@ const Footer = () => {
             </div>
             <div className='d-flex justify-content-between'>
                 <p>Sunday</p>
-                <p>08:00 - 20:00</p>
+                <p>10:00 - 18:00</p>
             </div>
             <div className='d-flex justify-content-between'>
                 <p>Saturday</p>
-                <p>08:00 - 20:00</p>
+                <p>09:00 - 18:00</p>
             </div>
             <div></div>
             <div></div>
         </div>
         </div>
-        <p className='text-center mt-3'>© 2021 Molecular Diagnosis. All rights reserved. | Website by Healthcare Success | Privacy Policy | Sitemap</p>
+        <p className='text-center mt-3 p-0'>© 2021 Molecular Diagnosis. All rights reserved. | Website by Healthcare Success | Privacy Policy | Sitemap</p>
         </div>
     </div>
     );
