@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login';
 import Footer from './Pages/Footer/Footer';
 import SingleServiceDetail from './Pages/singleServiceDetail/SingleServiceDetail';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -32,9 +33,9 @@ function App() {
       <Route path='/login'>
         <Login></Login>
       </Route>
-      <Route path='/services/:serviceId'>
+      <PrivateRoute path='/services/:serviceId'>
         <SingleServiceDetail></SingleServiceDetail>
-      </Route>
+      </PrivateRoute>
       <Route path='*'>
         <PageNotFound></PageNotFound>
       </Route>
