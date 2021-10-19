@@ -8,6 +8,7 @@ import Appoinment from './Pages/Appoinment/Appoinment';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Login from './Pages/Login/Login';
 import Footer from './Pages/Footer/Footer';
+import SingleServiceDetail from './Pages/singleServiceDetail/SingleServiceDetail';
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,9 @@ function App() {
       </Route>
       <Route path='/login'>
         <Login></Login>
+      </Route>
+      <Route path='/services/:serviceId'>
+        <SingleServiceDetail></SingleServiceDetail>
       </Route>
       <Route path='*'>
         <PageNotFound></PageNotFound>

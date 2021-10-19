@@ -1,0 +1,21 @@
+.single-service{
+   width: 50%;
+   margin: 50px auto 0;
+}
+.name-img-part{
+    display: flex;
+}
+.single-service p{
+    padding: 0;
+}
+.name-img-part img{
+    height: 250px;
+}
+@media only screen and (max-width:688px) {
+    .name-img-part{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+}
