@@ -9,9 +9,11 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Login from './Pages/Login/Login';
 import Footer from './Pages/Footer/Footer';
 import SingleServiceDetail from './Pages/singleServiceDetail/SingleServiceDetail';
+import AuthProvider from './Context/AuthProvider';
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
       <Switch>
@@ -39,6 +41,7 @@ function App() {
       </Switch>
       <Footer></Footer>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

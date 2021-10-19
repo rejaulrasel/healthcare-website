@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHospitalUser } from '@fortawesome/free-solid-svg-icons'
+import useAuth from '../../Hooks/useAuth';
 
 const navIcon = <FontAwesomeIcon icon={faHospitalUser} />
 const Header = () => {
+    const { user,logout } = useAuth()
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
@@ -32,9 +34,16 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to='/appointment'>Appointment</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to='/login'>Log In</Link>
-                            </li>
+                            {
+                                !user.email ?
+                                    <li className="nav-item">
+                                        <Link to='/login'>Log In</Link>
+                                    </li>
+                                    :
+                                    <li className="nav-item fs-5"><img src={user.photoURL} width='50px' height='40px' alt="" />{user.displayName}
+                                    <button className='ms-3' onClick={logout}> Log out</button>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
