@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+}
+@media screen and (max-width: 688px){
+    .news{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        margin-left: 0;
+    }
+    h4{
+        margin-top: 20px;
+        font-size: 18px;
+    }
+}

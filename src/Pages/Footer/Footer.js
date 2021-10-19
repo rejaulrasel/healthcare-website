@@ -11,7 +11,7 @@ const emailIcon = <FontAwesomeIcon icon={faEnvelope} />
 const arrowIcon = <FontAwesomeIcon icon={faArrowRight} />
 const Footer = () => {
     return (
-        <div className='bg-primary text-light'>
+        <div className='footer text-light'>
         <div className='container'>
         <div className='footer-section'>
         <div className='me-5 mt-5'>
