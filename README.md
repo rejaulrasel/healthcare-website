@@ -1,4 +1,4 @@
-# Medi-Life Family
+# Molecular Diagnosis
 
 Website Link[Molecular Diagnosis](https://molecular-dagnosis.web.app).
 
