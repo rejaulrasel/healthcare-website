@@ -6,17 +6,18 @@ const Login = () => {
     const { signInUsingGoogle,getEmail,getPassword, signInUsingEmail,error} = useAuth();
     return (
         <div className='container-xl bg-dark text-white pb-5'>
+            <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Log In</h1>
             <h3 className='text-light  w-100'>{error}</h3>
             <form onSubmit={signInUsingEmail} className='px-5 py-4'>
                 <div className="row mb-3">
                     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
-                    <div className="col-7">
+                    <div className="col-12 col-md-8">
                         <input onBlur={getEmail} type="email" className="form-control" id="inputEmail3" />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
-                    <div className="col-7">
+                    <div className="col-12 col-md-8">
                         <input onBlur={getPassword} type="password" className="form-control" id="inputPassword3" />
                     </div>
                 </div>
