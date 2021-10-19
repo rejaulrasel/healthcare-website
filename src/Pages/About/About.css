@@ -1,0 +1,11 @@
+.intro-container{
+    display: flex;
+    padding: 50px;
+    background-color: whitesmoke;
+}
+@media screen and (max-width:688px) {
+    .intro-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Appoinment.css';
-import bgImg from './images/bg-img.jpg'
 const Appoinment = () => {
     return (
         <div>
