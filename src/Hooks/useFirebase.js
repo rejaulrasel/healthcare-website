@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLogin,setIsLogin] = useState(false)
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -69,6 +70,11 @@ const useFirebase = () => {
             }
         })
     },[])
+
+    const toggleLogin = (e) => {
+        console.log(e.target.checked)
+        setIsLogin(e.target.checked)
+    }
     
     return{
         user,
@@ -78,6 +84,8 @@ const useFirebase = () => {
         getPassword,
         signInUsingEmail,
         logout,
+        toggleLogin,
+        setIsLogin,
     }
 
 }

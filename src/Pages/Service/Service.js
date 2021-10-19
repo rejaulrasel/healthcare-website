@@ -11,7 +11,7 @@ const Service = (props) => {
             </div>
             <h4 className='text-center my-3 px-5'>{title}</h4>
             <p className='px-5'>{description.slice(0,300)}</p>
-            <div className="mx-auto w-25">
+            <div className="mx-auto w-100">
             <Link to={`/services/${id}`}><button className='btn-regular px-5'>View More</button></Link>
             </div>
         </div>

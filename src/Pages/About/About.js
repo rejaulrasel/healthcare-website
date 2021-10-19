@@ -5,7 +5,7 @@ import director from './images/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg
 const About = () => {
     return (
         <div>
-            <section className='container intro-container border border-2'>
+            <section className='container intro-container border border-2 mt-3'>
                 <div className='me-5'>
                     <h2>About Us</h2>
                     <p>Molecular Diagnosis is the 1st Molecular Diagnostic Lab in Bangladesh of its kind in Bangladesh with the aim of providing all kinds of DNA and RNA based molecular Diagnostic. The lab is equipped with cutting-edge technologies and most sophisticated equipments like Real-time PCR, Genetic Analyzer NGS etc. to provide premium quality services. All the diagnostic equipments and kits used in DNA Solution Ltd. meets CE/IVD (In vitro Diagnostic) compliance and FDA approved. A group of very well qualified experts in the area of molecular biology, molecular genetics, molecular medicine, biochemistry are associates to ensure high standard of the analysis conducted. We offer the highest quality service of all molecular tests from DNA solution Ltd.</p>

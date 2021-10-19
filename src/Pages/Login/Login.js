@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Login.css';
 const Login = () => {
-    const { signInUsingGoogle,getEmail,getPassword, signInUsingEmail,error} = useAuth();
+    const { signInUsingGoogle,getEmail,getPassword, signInUsingEmail,error, toggleLogin, isLogin} = useAuth();
     return (
         <div className='container-xl bg-dark text-white pb-5'>
             <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Log In</h1>
@@ -25,11 +25,10 @@ const Login = () => {
                 <div className="row mb-3">
     <div className="col-sm-10 offset-sm-2">
       <div className="form-check">
-        <input className="form-check-input" type="checkbox" id="gridCheck1"/>
+        <input onClick={toggleLogin} className="form-check-input" type="checkbox" id="gridCheck1"/>
         <label className="form-check-label" htmlFor="gridCheck1">
-        <Link to='/register'>
                 <h6 className='text-white'>New User?</h6>
-            </Link>
+
         </label>
       </div>
     </div>
