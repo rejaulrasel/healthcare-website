@@ -1,0 +1,44 @@
+.features-container{
+    background-color: #113377;
+}
+.features{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+   
+}
+.icon{
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+.feature{
+    text-align: center;
+    margin: 10px;
+    padding: 50px;
+}
+
+.appointment-input{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+}
+input{
+    padding: 20px 10px;
+}
+.bg-img{
+    background-image: url(./images/pina-messina-iIDiRMITYik-unsplash.jpg);
+    
+}
+@media  screen and (max-width:688px) {
+    .features{
+        display: grid;
+    grid-template-columns: repeat(1,1fr);
+    }
+    .feature{
+        padding: 30px;
+    }
+    .appointment-input{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 50px;
+    }
+}

@@ -9,7 +9,7 @@ const News = (props) => {
                 <img src={img} width='220px' height='120px' alt="" />
             </div>
             <div className='ms-md-3 w-50 mx-auto'>
-                <Link><h4>{title}</h4></Link>
+                <h4>{title}</h4>
                 <p>{author}</p>
             </div>
 
