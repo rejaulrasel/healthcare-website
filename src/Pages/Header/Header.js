@@ -37,7 +37,7 @@ const Header = () => {
                                         <Link to='/login'>Log In</Link>
                                     </li>
                                     :
-                                    <li className="nav-item fs-5">{user.email}
+                                    <li className="nav-item fs-5">{user.displayName}
                                     <button className='ms-3' onClick={logout}> Log out</button>
                                 </li>
                             }

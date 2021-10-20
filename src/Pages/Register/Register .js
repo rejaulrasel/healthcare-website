@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-    const { signInUsingGoogle, getEmail, getPassword, signUpUsingEmail, error } = useAuth();
+    const { signInUsingGoogle, getName,getEmail, getPassword, signUpUsingEmail, error } = useAuth();
     return (
         <div className='container-xl bg-dark text-white pb-5'>
             <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Register</h1>
             <h4 className='text-light  mt-4  w-50  p-2 rounded-4'>{error}</h4>
             <form onSubmit={signUpUsingEmail} className='px-5 py-4'>
+                <div className="row mb-3">
+                    <label className="col-sm-2 col-form-label">Your Name</label>
+                    <div className="col-12 col-md-8">
+                        <input onBlur={getName} type="text" className="form-control"/>
+                    </div>
+                </div>
                 <div className="row mb-3">
                     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-12 col-md-8">
@@ -23,8 +29,8 @@ const Register = () => {
                 </div>
 
                 <div className="row mb-3">
-                    <div className="col-sm-10 offset-sm-2">
-                <h5>Already Have an Account <Link to='/login'>Log In</Link></h5>
+                    <div className="col-sm-10 offset-sm-2 mb-3">
+                        <h5>Already Have an Account? <Link to='/login'>Log In</Link></h5>
                     </div>
                 </div>
                 <div className='text-center'>
