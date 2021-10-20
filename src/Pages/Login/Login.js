@@ -7,7 +7,7 @@ const Login = () => {
     return (
         <div className='container-xl bg-dark text-white pb-5'>
             <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Log In</h1>
-            <h3 className='text-light  w-100'>{error}</h3>
+            <h4 className='text-light  mt-4  w-50  p-2 rounded-4'>{error}</h4>
             <form onSubmit={signInUsingEmail} className='px-5 py-4'>
                 <div className="row mb-3">
                     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>

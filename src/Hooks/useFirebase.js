@@ -13,40 +13,36 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const getEmail = (e) => {
-        console.log(e.target.value);
         setEmail(e.target.value)
     }
     const getPassword = (e) => {
-        console.log(e.target.value);
         setPassword(e.target.value)
     }
 
     const signInUsingGoogle = () => {
         signInWithPopup(auth, googleProvider)
+        setError('')
         .then(result => {
-            console.log(result.user);
             setUser(result.user)
-            setError('')
         })
 
         .catch(err => {
             setError(err.message);
-            console.log(err.message);
         })
 
     }
     const signUpUsingEmail = (e) => {
         e.preventDefault()
+        setError('')
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
-            console.log(result.user)
             setUser(result.user)
-            setError('')
+            
         })
 
         .catch(err => {
             setError(err.message);
-            console.log(err.message);
+           
         })
     }
 
@@ -54,7 +50,6 @@ const useFirebase = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
-            console.log(result.user)
             setUser(result.user)
         })
 
