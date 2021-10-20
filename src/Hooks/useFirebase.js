@@ -38,6 +38,12 @@ const useFirebase = () => {
         .finally(() => setIsLoading(false))
 
     }
+    const setUserName = () => {
+        updateProfile(auth.currentUser, {
+            displayName: name
+        })
+        .then(() => {})
+    }
     const signUpUsingEmail = (e) => {
         e.preventDefault()
         setIsLoading(true)
@@ -45,7 +51,6 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             setUser(result.user)
-            console.log(result.user)
             setUserName();
             
         })
@@ -58,16 +63,12 @@ const useFirebase = () => {
                 setIsLoading(false)
         })
     }
-    const setUserName = () => {
-        updateProfile(auth.currentUser, {
-            displayName: name
-        })
-        .then(() => {})
-    }
+   
 
     const signInUsingEmail = (e) => {
         e.preventDefault();
         setIsLoading(true)
+        setError('')
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             setUser(result.user)
@@ -110,6 +111,7 @@ const useFirebase = () => {
 
         return () => unsubscribed;
     },[])
+    
 
     
     

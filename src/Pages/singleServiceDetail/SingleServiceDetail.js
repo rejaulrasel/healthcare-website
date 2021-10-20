@@ -9,7 +9,6 @@ const SingleServiceDetail = () => {
     const {services} = useServices();
     const [singleService, setSingleService] = useState({});
     console.log(singleService);
-    // const {title,img, needed, description,reasons} = singleService;
     useEffect( () => {
         const foundService = services.find(service => service.id == serviceId)
         setSingleService(foundService)

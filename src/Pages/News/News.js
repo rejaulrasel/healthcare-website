@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './News.css'
 const News = (props) => {
     const { img, title, author } = props.news
