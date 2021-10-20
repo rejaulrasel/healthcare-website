@@ -11,7 +11,7 @@ const SingleServiceDetail = () => {
     console.log(singleService);
     // const {title,img, needed, description,reasons} = singleService;
     useEffect( () => {
-        const foundService = services.find(service => service.id = serviceId)
+        const foundService = services.find(service => service.id == serviceId)
         setSingleService(foundService)
     },[services,serviceId])
     return (
@@ -28,6 +28,8 @@ const SingleServiceDetail = () => {
            <p>{singleService?.description}</p>
            <h6 className='mt-5'>Why get tested?</h6>
            <p>{singleService?.needed}</p>
+           
+           <h4>Make an Appointment? <Link to='/appointment'>Click Here</Link></h4>
            <Link to='/home'>Back to home page?</Link>
         </div>
     );
