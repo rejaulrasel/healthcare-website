@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-    const { signInUsingGoogle, getName,getEmail, getPassword, signUpUsingEmail, error } = useAuth();
+    const {user,signInUsingGoogle, getName,getEmail, getPassword, signUpUsingEmail, error } = useAuth();
     return (
         <div className='container-xl bg-dark text-white pb-5'>
             <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Register</h1>
-            <h4 className='text-light  mt-4  w-50  p-2 rounded-4'>{error}</h4>
+            {!error ? <div className="text-center mt-5">
+                {user.email ? <h4>You have Succesfully Login!!</h4> : <h4>You have Succesfully Logout</h4>}
+            </div>
+            :
+            <h4 className='mt-4  w-50  p-2 rounded-4 text-danger'><i className="fas fa-exclamation-circle me-2"></i>{error}</h4>
+            }
             <form onSubmit={signUpUsingEmail} className='px-5 py-4'>
                 <div className="row mb-3">
                     <label className="col-sm-2 col-form-label">Your Name</label>

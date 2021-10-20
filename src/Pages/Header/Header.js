@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 
 const navIcon = <FontAwesomeIcon icon={faHospitalUser} />
 const Header = () => {
-    const { user,logout } = useAuth()
+    const { user, logout } = useAuth()
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
@@ -38,8 +38,8 @@ const Header = () => {
                                     </li>
                                     :
                                     <li className="nav-item fs-5">{user.displayName}
-                                    <button className='ms-3' onClick={logout}> Log out</button>
-                                </li>
+                                        <button className='ms-3' onClick={logout}> Log out</button>
+                                    </li>
                             }
                         </ul>
                     </div>
