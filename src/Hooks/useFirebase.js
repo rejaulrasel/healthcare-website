@@ -1,5 +1,5 @@
 import initializeAuthentication from "../Firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signOut,onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut,onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 initializeAuthentication();
@@ -9,7 +9,6 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isLogin,setIsLogin] = useState(false)
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -36,7 +35,7 @@ const useFirebase = () => {
         })
 
     }
-    const signInUsingEmail = (e) => {
+    const signUpUsingEmail = (e) => {
         e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
@@ -51,6 +50,18 @@ const useFirebase = () => {
         })
     }
 
+    const signInUsingEmail = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            console.log(result.user)
+            setUser(result.user)
+        })
+
+        .catch(err => {
+            setError(err.message)
+        })
+    }
 
     const logout = () => {
         signOut(auth)
@@ -62,6 +73,7 @@ const useFirebase = () => {
         })
     }
     
+    
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if(user){
@@ -71,10 +83,7 @@ const useFirebase = () => {
         })
     },[])
 
-    const toggleLogin = (e) => {
-        console.log(e.target.checked)
-        setIsLogin(e.target.checked)
-    }
+    
     
     return{
         user,
@@ -82,10 +91,10 @@ const useFirebase = () => {
         signInUsingGoogle,
         getEmail,
         getPassword,
-        signInUsingEmail,
+        signUpUsingEmail,
         logout,
-        toggleLogin,
-        setIsLogin,
+        signInUsingEmail,
+        
     }
 
 }

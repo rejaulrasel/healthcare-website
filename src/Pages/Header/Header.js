@@ -37,7 +37,7 @@ const Header = () => {
                                         <Link to='/login'>Log In</Link>
                                     </li>
                                     :
-                                    <li className="nav-item fs-5"><img src={user.photoURL} width='50px' height='40px' alt="" />{user.displayName}
+                                    <li className="nav-item fs-5">{user.email}
                                     <button className='ms-3' onClick={logout}> Log out</button>
                                 </li>
                             }

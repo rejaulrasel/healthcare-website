@@ -11,6 +11,7 @@ import Footer from './Pages/Footer/Footer';
 import SingleServiceDetail from './Pages/singleServiceDetail/SingleServiceDetail';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Register from './Pages/Register/Register ';
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,9 @@ function App() {
       </Route>
       <Route path='/login'>
         <Login></Login>
+      </Route>
+      <Route path='/register'>
+        <Register></Register>
       </Route>
       <PrivateRoute path='/services/:serviceId'>
         <SingleServiceDetail></SingleServiceDetail>
