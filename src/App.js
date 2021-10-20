@@ -1,8 +1,8 @@
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
-import Services from './Pages/Services/Services';
 import About from './Pages/About/About';
 import Appoinment from './Pages/Appoinment/Appoinment';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';

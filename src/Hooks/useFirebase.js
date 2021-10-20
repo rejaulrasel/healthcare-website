@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -20,8 +21,8 @@ const useFirebase = () => {
     }
 
     const signInUsingGoogle = () => {
+        setIsLoading(true)
         signInWithPopup(auth, googleProvider)
-        setError('')
         .then(result => {
             setUser(result.user)
         })
@@ -29,10 +30,12 @@ const useFirebase = () => {
         .catch(err => {
             setError(err.message);
         })
+        .finally(() => setIsLoading(false))
 
     }
     const signUpUsingEmail = (e) => {
         e.preventDefault()
+        setIsLoading(true)
         setError('')
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
@@ -44,21 +47,31 @@ const useFirebase = () => {
             setError(err.message);
            
         })
+        .finally(() => {
+                setIsLoading(false)
+        })
     }
 
     const signInUsingEmail = (e) => {
         e.preventDefault();
+        setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             setUser(result.user)
         })
 
+        
         .catch(err => {
             setError(err.message)
+        })
+
+        .finally( () => {
+            setIsLoading(false)
         })
     }
 
     const logout = () => {
+        setIsLoading(true)
         signOut(auth)
         .then( () => {
             setUser({})
@@ -66,16 +79,23 @@ const useFirebase = () => {
         .catch(err => {
             setError(err.message);
         })
+        .finally(() => setIsLoading(false))
     }
     
     
     useEffect(() => {
-        onAuthStateChanged(auth, user => {
+        const unsubscribed = onAuthStateChanged(auth, user => {
             if(user){
                 console.log('inside state changed', user);
                 setUser(user);
             }
+            else{
+                setUser({})
+            }
+            setIsLoading(false)
         })
+
+        return () => unsubscribed;
     },[])
 
     
@@ -89,6 +109,7 @@ const useFirebase = () => {
         signUpUsingEmail,
         logout,
         signInUsingEmail,
+        isLoading,
         
     }
 
