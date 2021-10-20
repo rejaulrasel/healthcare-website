@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Login.css';
+
 const Login = () => {
     const { user, signInUsingGoogle, getEmail, getPassword, signInUsingEmail, error } = useAuth();
     return (
-        <div className='container-xl bg-dark text-white pb-5'>
+        <div className='container-xl text-white pb-5 login-container'>
             <h1 className='text-center'><span className='text-light'><i className="fas fa-sign-in-alt"></i></span> Please Log In</h1>
 
             {!error ? <div className="text-center mt-5">

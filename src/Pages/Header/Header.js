@@ -41,6 +41,12 @@ const Header = () => {
                                         <button className='ms-3' onClick={logout}> Log out</button>
                                     </li>
                             }
+                            {!user.email && <div>
+                                <li className="nav-item">
+                                        <Link to='/register'>Register</Link>
+                                    </li> 
+                            </div>
+                                }
                         </ul>
                     </div>
                 </div>
