@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHospitalUser } from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +12,9 @@ const Header = () => {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container">
+                    <NavLink to='/home'>
                     <h2 className='text-primary'>{navIcon} <span className='ms-1'>Molecular Diagnosis</span> </h2>
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -38,7 +40,7 @@ const Header = () => {
                                     </li>
                                     :
                                     <li className="nav-item fs-5">{user.displayName}
-                                        <button className='ms-3' onClick={logout}> Log out</button>
+                                        <button className='ms-3 btn-primary' onClick={logout}> Log out</button>
                                     </li>
                             }
                             {!user.email && <div>
