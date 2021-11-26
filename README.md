@@ -1,6 +1,6 @@
 # Molecular Diagnosis
 
-## Website Link [Molecular Diagnosis](https://molecular-dagnosis.web.app).
+## Website Link [Click Here](https://molecular-dagnosis.web.app).
 
 ## Project overviews
 ### .It's A Diagnosis Center
