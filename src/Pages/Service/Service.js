@@ -5,9 +5,9 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 const Service = (props) => {
     const{img,title,description,id} = props.service;
-    useEffect( () => {
-        Aos.init( { duration : 1500 })
-    }, [])
+    // useEffect( () => {
+    //     Aos.init( { duration : 1500 })
+    // }, [])
     return (
         <div data-aos='fade-down-right' className='service'>
             <div>
@@ -16,7 +16,7 @@ const Service = (props) => {
             <h4 className='text-center mt-2'>{title}</h4>
             <h6 className='p-2'>{description.slice(0,250)}</h6>
             <div className='d-flex align-items-end'>
-           <button className='w-100 '> <Link to={`/services/${id}`}>Read More</Link></button>
+            <Link className='w-100 ' to={`/services/${id}`}><button >Read More</button></Link>
         </div>
         </div>
     );

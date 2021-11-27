@@ -3,7 +3,7 @@ import './News.css'
 const News = (props) => {
     const { img, title, author } = props.news
     return (
-        <div className='d-flex news'>
+        <div data-aos='fade-up' className='d-flex news'>
             <div>
                 <img src={img} width='220px' height='120px' alt="" />
             </div>
