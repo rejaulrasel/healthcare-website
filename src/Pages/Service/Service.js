@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Service.css'
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 const Service = (props) => {
     const{img,title,description,id} = props.service;
+    useEffect( () => {
+        Aos.init( { duration : 1500 })
+    }, [])
     return (
-        <div className='service'>
+        <div data-aos='fade-down-right' className='service'>
             <div>
                 <img src={img} alt="" />
             </div>
-            <h4 className='text-center my-3 px-5'>{title}</h4>
-            <p className='px-5'>{description.slice(0,300)}</p>
-            <div className="mx-auto w-100">
-            <Link to={`/services/${id}`}><button className='btn-regular px-5'>View More</button></Link>
-            </div>
+            <h4 className='text-center mt-2'>{title}</h4>
+            <h6 className='p-2'>{description.slice(0,250)}</h6>
+            <div className='d-flex align-items-end'>
+           <button className='w-100 '> <Link to={`/services/${id}`}>Read More</Link></button>
+        </div>
         </div>
     );
 };
